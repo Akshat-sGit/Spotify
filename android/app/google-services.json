@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "690656580069",
+    "project_id": "spotify1510",
+    "storage_bucket": "spotify1510.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690656580069:android:32452375eeba927cca9f0c",
+        "android_client_info": {
+          "package_name": "com.akshat.spotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS2w7F21_TBpGb_dcYQZTLya65sxQzICY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
