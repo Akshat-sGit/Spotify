@@ -11,13 +11,18 @@ class NewsSongs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => NewsSongsCubit(),
+      create: (_) => NewsSongsCubit()..getNewsSongs(),
       child: SizedBox(
         height: 200,
         child: BlocBuilder<NewsSongsCubit,NewsSongsState>(
           builder: (context, state){
             if(state is NewsSongsLoading){
-              return const CircularProgressIndicator(color: AppColors.primary,); 
+              return Container(
+                alignment: Alignment.center,
+                child: const CircularProgressIndicator(
+                  color: AppColors.primary
+                  )
+                ); 
             }
             if(state is NewsSongsLoaded){
               return _songs(

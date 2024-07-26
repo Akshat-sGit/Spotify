@@ -13,7 +13,7 @@ class SongFirebaseServiceImpl extends SongFirebaseService{
   @override
   Future<Either> getsNewsSongs() async {
     try {
-      List<SongEntity> songs = []; 
+      List<SongEntity> songs = [];  
       var data = await FirebaseFirestore.instance.collection('Songs')
       .orderBy('releaseDate', descending: true)
       .limit(3)
