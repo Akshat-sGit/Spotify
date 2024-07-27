@@ -12,6 +12,7 @@ import 'package:spotify/domain/usecases/song/get_news_songs.dart';
 final sl = GetIt.instance; 
 
 Future<void> initializeDependencies() async{
+
   sl.registerSingleton<AuthFirebaseService>(
     AuthFirebaseServiceImpl()
   ); 

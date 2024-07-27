@@ -9,7 +9,4 @@ class GetNewsSongsUseCase implements Usecase<Either,dynamic> {
     return await sl<SongRepositoryImpl>().getsNewsSongs();
 
   }
-
-  
-
 }
