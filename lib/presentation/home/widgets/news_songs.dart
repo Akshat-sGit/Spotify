@@ -31,7 +31,7 @@ class NewsSongs extends StatelessWidget {
           } else {
             return Center(
               child: Text(
-                'Songs are loading...',
+                'Songs are not fetched',
                 style: GoogleFonts.plusJakartaSans(),
               ),
             );
