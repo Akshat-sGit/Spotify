@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage>
         child: Column(
           children: [
             _homeTopCard(),
+            const SizedBox(height: 16),
             _tabs(),
             SizedBox(
               height: 260,
@@ -89,9 +90,11 @@ class _HomePageState extends State<HomePage>
     return TabBar(
       controller: _tabController,
       isScrollable: true,
+      indicatorWeight: 3,
+      indicatorSize: TabBarIndicatorSize.tab,
       indicatorColor: AppColors.primary,
       labelColor: context.isDarkMode ? Colors.white : Colors.black,
-      padding: const EdgeInsets.symmetric(vertical: 40),
+      tabAlignment: TabAlignment.center,
       tabs: [
         Text(
           'News',
