@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spotify/common/widgets/appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
+import 'package:spotify/core/configs/theme/app_colors.dart';
 import 'package:spotify/data/models/auth/signin_user_req.dart';
 import 'package:spotify/domain/usecases/auth/signin.dart';
 import 'package:spotify/presentation/auth/pages/signup.dart';
@@ -50,8 +51,17 @@ class SignInPage extends StatelessWidget {
                   ); 
                   result.fold(
                     (l) {
-                      var snackbar = SnackBar(content: Text(l), behavior: SnackBarBehavior.floating,);
-                      ScaffoldMessenger.of(context).showSnackBar(snackbar); 
+                      var snackbar = SnackBar(
+                        content: Theme(
+                          data: Theme.of(context).copyWith(
+                            textTheme:  TextTheme(bodyLarge: GoogleFonts.plusJakartaSans(color: Colors.white)),
+                          ),
+                          child: Text(l),
+                        ),
+                        backgroundColor: AppColors.primary,
+                        behavior: SnackBarBehavior.floating,
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackbar);
                     },
                     (r) {
                       Navigator.pushAndRemoveUntil(
@@ -102,6 +112,7 @@ class SignInPage extends StatelessWidget {
       ).applyDefaults(
         Theme.of(context).inputDecorationTheme
       ),
+      obscureText: true,
     );
   }
 

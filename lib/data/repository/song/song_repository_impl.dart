@@ -9,8 +9,8 @@ import '../../../service_locator.dart';
 class SongRepositoryImpl extends SongsRepository{
 
   @override
-  Future<Either> getsNewsSongs() async{
-    return await sl<SongFirebaseService>().getsNewsSongs(); 
+  Future<Either> getNewsSongs() async{
+    return await sl<SongFirebaseService>().getNewsSongs(); 
   }
 
 }

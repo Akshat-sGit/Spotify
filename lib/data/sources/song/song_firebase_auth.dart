@@ -4,14 +4,14 @@ import 'package:spotify/data/models/song/song.dart';
 import 'package:spotify/domain/entities/song/song.dart';
 
 abstract class SongFirebaseService{
-  Future<Either> getsNewsSongs(); 
+  Future<Either> getNewsSongs(); 
 }
 
 class SongFirebaseServiceImpl extends SongFirebaseService{
 
 
   @override
-  Future<Either> getsNewsSongs() async {
+  Future<Either> getNewsSongs() async {
     try {
       List<SongEntity> songs = [];  
       var data = await FirebaseFirestore.instance.collection('Songs')

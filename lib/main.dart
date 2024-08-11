@@ -21,7 +21,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  await initializeDependencies(); 
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
@@ -32,17 +32,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => ThemeCubit()) 
-      ],
-      child: BlocBuilder<ThemeCubit,ThemeMode>(
-        builder: (context, mode) =>  MaterialApp(
-          title: 'Flutter Demo',
+      providers: [BlocProvider(create: (_) => ThemeCubit())],
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) => MaterialApp(
+          title: 'Spotify',
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: mode,
           debugShowCheckedModeBanner: false,
-          home:const SplashPage(),
+          home: const SplashPage(),
         ),
       ),
     );

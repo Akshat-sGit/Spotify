@@ -15,7 +15,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -44,12 +45,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  const NewsSongs(), 
+                  const NewsSongs(),
                   Container(),
                   Container(),
                   Container(),
-                
-                ]
+                ],
               ),
             ),
           ],
@@ -85,31 +85,35 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     );
   }
 
-  Widget _tabs(){
+  Widget _tabs() {
     return TabBar(
       controller: _tabController,
       isScrollable: true,
       indicatorColor: AppColors.primary,
       labelColor: context.isDarkMode ? Colors.white : Colors.black,
-      padding: const EdgeInsets.symmetric(vertical: 40,horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 40),
       tabs: [
         Text(
-          'News', 
-          style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w500, fontSize: 16),
+          'News',
+          style: GoogleFonts.plusJakartaSans(
+              fontWeight: FontWeight.w500, fontSize: 16),
         ),
         Text(
-          'Video', 
-          style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w500, fontSize: 16),
+          'Video',
+          style: GoogleFonts.plusJakartaSans(
+              fontWeight: FontWeight.w500, fontSize: 16),
         ),
         Text(
-          'Artist', 
-          style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w500, fontSize: 16),
+          'Artist',
+          style: GoogleFonts.plusJakartaSans(
+              fontWeight: FontWeight.w500, fontSize: 16),
         ),
         Text(
-          'Podcast', 
-          style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w500, fontSize: 16),
+          'Podcast',
+          style: GoogleFonts.plusJakartaSans(
+              fontWeight: FontWeight.w500, fontSize: 16),
         ),
       ],
     );
-  } 
+  }
 }

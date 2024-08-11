@@ -4,34 +4,32 @@ import 'package:spotify/data/repository/song/song_repository_impl.dart';
 import 'package:spotify/data/sources/auth/auth_firebase_service.dart';
 import 'package:spotify/data/sources/song/song_firebase_auth.dart';
 import 'package:spotify/domain/repository/auth/auth.dart';
-import 'package:spotify/domain/repository/song/song.dart';
 import 'package:spotify/domain/usecases/auth/signin.dart';
 import 'package:spotify/domain/usecases/auth/signup.dart';
 import 'package:spotify/domain/usecases/song/get_news_songs.dart';
 
-final sl = GetIt.instance; 
+final sl = GetIt.instance;
 
-Future<void> initializeDependencies() async{
-
+Future<void> initializeDependencies() async {
   sl.registerSingleton<AuthFirebaseService>(
-    AuthFirebaseServiceImpl()
-  ); 
+    AuthFirebaseServiceImpl(),
+  );
   sl.registerSingleton<SongFirebaseService>(
-    SongFirebaseServiceImpl()
+    SongFirebaseServiceImpl(),
   );
   sl.registerSingleton<AuthRepository>(
-    AuthRepositoryImpl()
-  ); 
+    AuthRepositoryImpl(),
+  );
   sl.registerSingleton<SignupUseCase>(
-    SignupUseCase()
+    SignupUseCase(),
   );
   sl.registerSingleton<SigninUseCase>(
-    SigninUseCase()
+    SigninUseCase(),
   );
-  sl.registerSingleton<SongsRepository>(
-    SongRepositoryImpl()
+  sl.registerSingleton<SongRepositoryImpl>(
+    SongRepositoryImpl(),
   );
   sl.registerSingleton<GetNewsSongsUseCase>(
-    GetNewsSongsUseCase()
+    GetNewsSongsUseCase(),
   );
 }
