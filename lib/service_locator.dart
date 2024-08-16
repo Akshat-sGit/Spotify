@@ -17,6 +17,9 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<SongFirebaseService>(
     SongFirebaseServiceImpl(),
   );
+  sl.registerSingleton<SongFirebaseServiceImpl>(
+    SongFirebaseServiceImpl(),
+  );
   sl.registerSingleton<AuthRepository>(
     AuthRepositoryImpl(),
   );

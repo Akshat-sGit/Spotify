@@ -23,6 +23,4 @@ class NewsSongsCubit extends Cubit<NewsSongsState> {
       }
     );
   }
-  
-  
 }

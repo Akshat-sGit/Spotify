@@ -20,9 +20,11 @@ class NewsSongs extends StatelessWidget {
             builder: (context, state) {
           if (state is NewsSongsLoading) {
             return Container(
-                alignment: Alignment.center,
-                child:
-                    const CircularProgressIndicator(color: AppColors.primary));
+              alignment: Alignment.center,
+              child:const CircularProgressIndicator(
+                color: AppColors.primary
+              )
+            );
           }
           if (state is NewsSongsLoaded) {
             return _songs(
@@ -49,6 +51,7 @@ class NewsSongs extends StatelessWidget {
         return SizedBox(
           width: 160,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Container(
