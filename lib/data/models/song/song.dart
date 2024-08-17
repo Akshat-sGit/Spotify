@@ -5,13 +5,13 @@ class SongModel{
    String ? title; 
    String ? artist;
    num ? duration;
-   Timestamp ? releasDate;
+   Timestamp ? releaseDate;
 
   SongModel({
     required this.title,
     required this.artist,
     required this.duration,
-    required this.releasDate
+    required this.releaseDate
   });
 
   
@@ -19,7 +19,7 @@ class SongModel{
     title = data['title']; 
     artist = data['artist']; 
     duration = data['duration']; 
-    releasDate = data['releasDate']; 
+    releaseDate = data['releaseDate']; 
   } 
 }
 
@@ -29,7 +29,7 @@ extension SongModelX on SongModel{
       title: title!,
       artist: artist!,
       duration: duration!,
-      releasDate: releasDate!
+      releaseDate: releaseDate!
     );
   }
 }

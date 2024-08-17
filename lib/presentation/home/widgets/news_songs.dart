@@ -43,8 +43,8 @@ class NewsSongs extends StatelessWidget {
 
   Widget _songs(List<SongEntity> songs) {
     print(
-      'Rendering songs',
-    );
+        'Songs List: ${songs.map((song) => '${song.artist} - ${song.title}').toList()}');
+
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
@@ -63,8 +63,7 @@ class NewsSongs extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            Uri.encodeFull(
-                                '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}'),
+                            '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}',
                           ))),
                 ),
               ),
@@ -73,7 +72,7 @@ class NewsSongs extends StatelessWidget {
         );
       },
       separatorBuilder: (context, index) => const SizedBox(
-        width: 14,
+        width: 10,
       ),
       itemCount: songs.length,
     );
