@@ -20,11 +20,9 @@ class NewsSongs extends StatelessWidget {
             builder: (context, state) {
           if (state is NewsSongsLoading) {
             return Container(
-              alignment: Alignment.center,
-              child:const CircularProgressIndicator(
-                color: AppColors.primary
-              )
-            );
+                alignment: Alignment.center,
+                child:
+                    const CircularProgressIndicator(color: AppColors.primary));
           }
           if (state is NewsSongsLoaded) {
             return _songs(
@@ -44,10 +42,15 @@ class NewsSongs extends StatelessWidget {
   }
 
   Widget _songs(List<SongEntity> songs) {
+    print(
+      'Rendering songs',
+    );
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
       itemBuilder: (context, index) {
+        print(
+            '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}');
         return SizedBox(
           width: 160,
           child: Column(
@@ -60,7 +63,8 @@ class NewsSongs extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}',
+                            Uri.encodeFull(
+                                '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}'),
                           ))),
                 ),
               ),

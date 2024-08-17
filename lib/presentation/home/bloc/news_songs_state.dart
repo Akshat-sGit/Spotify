@@ -9,4 +9,9 @@ class NewsSongsLoaded extends NewsSongsState {
   NewsSongsLoaded({required this.songs});
 }
 
-class NewsSongsLoadFailure extends NewsSongsState {}
+class NewsSongsLoadFailure extends NewsSongsState {
+  final String message;
+  NewsSongsLoadFailure({required this.message});
+  @override
+  String toString() => message;
+}
