@@ -42,14 +42,14 @@ class NewsSongs extends StatelessWidget {
   }
 
   Widget _songs(List<SongEntity> songs) {
-    print(
+    debugPrint(
         'Songs List: ${songs.map((song) => '${song.artist} - ${song.title}').toList()}');
 
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        print(
+        debugPrint(
             '${AppUrls.fireStorage}${songs[index].artist} - ${songs[index].title}.jpg?${AppUrls.mediaAlt}');
         return SizedBox(
           width: 160,
